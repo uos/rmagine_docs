@@ -1,6 +1,6 @@
 # rmagine
 
-These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.github.io/rmagine_ros](https://uos.github.io/rmagine_ros)
+These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.github.io/rmagine_ros](https://uos.github.io/rmagine_docs)
 
 ## Build locally
 
@@ -25,4 +25,4 @@ mkdocs serve --strict
 
 ## Deploy to naturerobots.github.io/mbf_docs
 
-Anything pushed to branch `deploy` will trigger a Github Action that builds the website and updates [naturerobots.github.io/mbf_docs](https://naturerobots.github.io/mbf_docs)
+Anything pushed to branch `deploy` will trigger a Github Action that builds the website and updates [uos.github.io/rmagine_docs](https://uos.github.io/rmagine_docs)
