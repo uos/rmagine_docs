@@ -17,7 +17,7 @@
         <link rel="next" href="../noise/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../resources/img/rmagine_icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
@@ -88,8 +88,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Rmagine Documentation" class="md-header__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../resources/img/rmagine_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -279,8 +278,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Rmagine Documentation" class="md-nav__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../resources/img/rmagine_logo.png" alt="logo">
 
     </a>
     Rmagine Documentation
@@ -942,8 +940,8 @@
 
 <h1 id="problem-modelling">Problem Modelling</h1>
 <p>The general computing flow is as follows. </p>
-<p><img alt="rmagine_example" src="../../resources/img/rmagine.drawio.png" /></p>
-<p>Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an <code>EmbreeMap</code> or <code>OptixMap</code>. The Prefix of the <code>Simulator</code> is either <code>Embree</code> for CPU computation or <code>Optix</code> for GPU computation. The suffix of the Simulator is dependend on which sensor model you want to simulate. A few examples:</p>
+<p><img alt="rmagine_example" src="/resources/img/rmagine.drawio.png" /></p>
+<p>Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an <code>EmbreeMap</code> or <code>OptixMap</code>. The Prefix of the <code>Simulator</code> is either <code>Embree</code> for CPU computation or <code>Optix</code> for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:</p>
 <ul>
 <li><code>SphereSimulatorEmbree</code> - Simulate a velodyne on CPU</li>
 <li><code>PinholeSimulatorOptix</code>- Simulate a depth camera on GPU</li>
@@ -951,7 +949,7 @@
 </ul>
 <h2 id="example-1-simulate-1000-3d-lidars-on-cpu">Example 1: Simulate 1000 3D LiDaRs on CPU</h2>
 <p>Now we want to construct the following pipeline.</p>
-<p><img alt="rmagine_example_1" src="../../resources/img/rmagine_example_1.drawio.png" /></p>
+<p><img alt="rmagine_example_1" src="/resources/img/rmagine_example_1.drawio.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/simulation/SphereSimulatorEmbree.hpp&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1004,7 +1002,7 @@
 </code></pre></div>
 <h2 id="example-2-simulate-1000-lidars-on-gpu">Example 2: Simulate 1000 LiDaRs on GPU</h2>
 <p>Now we want to construct the following pipeline.</p>
-<p><img alt="rmagine_example_1" src="../../resources/img/rmagine_example_2.drawio.png" /></p>
+<p><img alt="rmagine_example_1" src="/resources/img/rmagine_example_2.drawio.png" /></p>
 <p>The green cells are memory objects on GPU as you see in the following code snippet.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/simulation/SphereSimulatorOptix.hpp&gt;</span>
 
@@ -1064,7 +1062,7 @@
 </code></pre></div>
 <h2 id="example-3-simulate-1000-lidars-on-gpu-and-images-on-cpu">Example 3: Simulate 1000 LiDaRs on GPU and Images on CPU</h2>
 <p>Now we want to construct the following pipeline.</p>
-<p><img alt="rmagine_example_1" src="../../resources/img/rmagine_example_3.drawio.png" /></p>
+<p><img alt="rmagine_example_1" src="/resources/img/rmagine_example_3.drawio.png" /></p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/simulation/SphereSimulatorOptix.hpp&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/simulation/PinholeSimulatorEmbree.hpp&gt;</span>
 

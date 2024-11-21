@@ -17,7 +17,7 @@
         <link rel="next" href="../../library/concepts/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../resources/img/rmagine_icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Rmagine Documentation" class="md-header__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../resources/img/rmagine_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -274,8 +273,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Rmagine Documentation" class="md-nav__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../resources/img/rmagine_logo.png" alt="logo">
 
     </a>
     Rmagine Documentation
@@ -842,8 +840,8 @@
   <h1>Noise</h1>
 
 <p>Currently noise models are implemented as postprocessing steps that modify the simulated ranges. Any of the following noise models can be chained to generate complex combined noise models.
-The Noise models are implented equally both on GPU and CPU.
-Thus the developer can manage to apply noise to the data without downloading or uploading the data from GPU to CPU or vice versa.</p>
+The Noise models are implemented equally both for GPU and CPU.
+Thus the developer can apply noise to the data without downloading or uploading the data from GPU to CPU or vice versa.</p>
 <ol>
 <li>Gaussian Noise</li>
 </ol>
@@ -866,7 +864,7 @@ Thus the developer can manage to apply noise to the data without downloading or 
 </tr>
 </tbody>
 </table>
-<p><img alt="rmagine_noise_gaussian" src="../../resources/img/rmagine_noise_gaussian.png" /></p>
+<p><img alt="rmagine_noise_gaussian" src="/resources/img/rmagine_noise_gaussian.png" /></p>
 <p>Example CPU:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/noise/GaussianNoise.hpp&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -934,7 +932,7 @@ Thus the developer can manage to apply noise to the data without downloading or 
 </tr>
 </tbody>
 </table>
-<p><img alt="rmagine_noise_rel_gaussian" src="../../resources/img/rmagine_noise_rel_gaussian.png" /></p>
+<p><img alt="rmagine_noise_rel_gaussian" src="/resources/img/rmagine_noise_rel_gaussian.png" /></p>
 <p>Example CPU:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/noise/RelGaussianNoise.hpp&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1001,7 +999,7 @@ Thus the developer can manage to apply noise to the data without downloading or 
 </tr>
 </tbody>
 </table>
-<p><img alt="rmagine_noise_dust" src="../../resources/img/rmagine_noise_dust.png" /></p>
+<p><img alt="rmagine_noise_dust" src="/resources/img/rmagine_noise_dust.png" /></p>
 <p>Example CPU:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/noise/UniformDustNoise.hpp&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
