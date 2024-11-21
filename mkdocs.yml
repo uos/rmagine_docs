@@ -14,7 +14,7 @@ theme:
     logo: resources/img/rmagine_logo.png
     favicon: resources/img/rmagine_icon.png
     palette:
-      primary: cyan
+      primary: blue grey
 
 markdown_extensions:
   - pymdownx.highlight
