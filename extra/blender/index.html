@@ -1,0 +1,1157 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://uos.github.io/extra/blender/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
+    
+    
+      
+        <title>Work with Blender - Rmagine Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#work-with-blender" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Rmagine Documentation" class="md-header__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rmagine Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Work with Blender
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/uos/rmagine" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting_started/overview/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../library/concepts/" class="md-tabs__link">
+          
+  
+  Library
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tools/" class="md-tabs__link">
+          
+  
+  Extra
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Rmagine Documentation" class="md-nav__button md-logo" aria-label="Rmagine Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Rmagine Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/uos/rmagine" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/sensors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sensors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/problem_modelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problem Modelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/noise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Noise
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Library
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Library
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library/concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library/math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library/memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../library/maps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Extra
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Extra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../news/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    News
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embree3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Embree 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Useful commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collada-dae-exports-odyssey-of-wrong-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collada (DAE) exports (odyssey of wrong imports)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collada (DAE) exports (odyssey of wrong imports)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beginning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beginning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-yet-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not yet fixed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      FIXED
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filmbox-fbx-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filmbox (FBX) exports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-3d-map-from-2d-building-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a 3D map from 2D building plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a 3D map from 2D building plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-a-2d-map-as-reference-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up a 2D Map as Reference image
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="work-with-blender">Work with Blender</h1>
+<p>Blender is a powerful tool to create and modify existing maps for rmagine.</p>
+<p>Some Links to look up:
+- Webpage: https://www.blender.org/
+- Docs: https://docs.blender.org/manual/en/latest/</p>
+<h2 id="useful-commands">Useful commands</h2>
+<h3 id="object-mode">Object Mode</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Effect</th>
+<th style="text-align: center;">C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Ctrl + G</td>
+<td style="text-align: center;">Move Object</td>
+<td style="text-align: center;">after: type X and "0.5" to move the object 0.5 along the X axis</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ctrl + R</td>
+<td style="text-align: center;">Rotate Object</td>
+<td style="text-align: center;">after: type Z and "45" to rotate the object 45 degree around the X axis</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ctrl + S</td>
+<td style="text-align: center;">Scale Object</td>
+<td style="text-align: center;">after: type X and "2.0" to scale the object 2.0 along the X axis</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collada-dae-exports-odyssey-of-wrong-imports">Collada (DAE) exports (odyssey of wrong imports)</h2>
+<h3 id="update">UPDATE</h3>
+<p>Blender plugin does everything right, Assimp writes the wrong transformation: See last sentence.</p>
+<h3 id="beginning">Beginning</h3>
+<p>Some strange errors happened while exporting blender's scene to collada format. I did the following in Blender (3.2.1):</p>
+<ul>
+<li>Moved the Cube 5 units along the x axis</li>
+<li>Moved the Cube 2 units along the y axis</li>
+<li>Moved the Cube 3 units along the z axis</li>
+<li>Rotated the Cube 45 degrees around the z axis</li>
+<li>Scaled the Cube with 0.2 (the resulting cube has the dimensions 0.4 x 0.4 x 0.4)</li>
+<li>Export DAE with default settings to "~/utitled.dae"</li>
+</ul>
+<p>After some library fixes to read the scene graph completely, any collada file generated by Blender no longer loads correctly. 
+With PLY exports, everything works as before. 
+So I inspected the generated outputs of the Blender Collada exports (read by Assimp):</p>
+<div class="highlight"><pre><span></span><code>$:~<span class="w"> </span>./bin/rmagine_map_info<span class="w"> </span>~/untitled.dae
+<span class="c1">#...</span>
+Scene<span class="w"> </span>Graph:<span class="w"> </span>
+-<span class="w"> </span>name:<span class="w"> </span>Scene
+-<span class="w"> </span>transform:<span class="w"> </span>
+<span class="w">  </span>M4x4<span class="o">[</span>
+<span class="w">    </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="m">0</span><span class="w"> </span>-1<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+<span class="w">  </span><span class="o">]</span>
+-<span class="w"> </span>meshes:<span class="w"> </span><span class="m">0</span>
+-<span class="w"> </span>children:<span class="w"> </span><span class="m">3</span>
+<span class="c1">#...</span>
+<span class="w">  </span>Node<span class="w"> </span><span class="m">2</span>
+<span class="w">    </span>-<span class="w"> </span>name:<span class="w"> </span>Cube
+<span class="w">    </span>-<span class="w"> </span>transform:<span class="w"> </span>
+<span class="w">      </span>M4x4<span class="o">[</span>
+<span class="w">        </span><span class="m">0</span>.141421<span class="w"> </span>-0.141421<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span>
+<span class="w">        </span><span class="m">0</span>.141421<span class="w"> </span><span class="m">0</span>.141421<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2</span>
+<span class="w">        </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.2<span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+<span class="w">      </span><span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>meshes:<span class="w"> </span><span class="m">1</span>
+<span class="w">      </span>-<span class="w"> </span>mesh<span class="w"> </span>ref<span class="w"> </span><span class="m">0</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>-<span class="w"> </span>children:<span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<p>And exactly there is the problem. I guess the "Cube" transformation is correct since it come from Blender directly. 
+The problem comes from the global matrix at node named "Scene".
+This matrix switches the y and z axes and negates the z axis (old y axis) afterwards.
+The complete transform of the "Cube" following the transformations to the root is</p>
+<p><code>v[5,3,-2], E[-1.5708, 0.785398, -1.26441e-07] with scale v[0.2,0.2,0.2]</code></p>
+<p>as expected, the total transform holds the axis-switched version of our previously done operations.
+But that is not what we want.
+Moving something in Blender along the x axis should result in an export with something in it that was moved along the x axis and no other axis.
+So how to fix it? 
+Pushing <code>Export -&gt; Colloda</code> opens a menu.
+Push the settings button in the top left corner.
+It opens a side panel, holding some values to change for the export.
+My first intuitive choice to set the forward axis to X and the up axis to Z were wrong, incomprehensibly.
+However, by trial and error I came up with setting these values as follows:</p>
+<div class="highlight"><pre><span></span><code>Forward Axis: Z
+Up Axis: -Y
+</code></pre></div>
+<p>With these settings the scene is exported exactly as I modelled it.
+Nevertheless, Blender exports the weird axis flip matrix at scene root.
+Every other transformation is adjusted such that every total transformation are valid.</p>
+<p><code>v[5,2,3], E[0, 0, 0.785398] with scale v[0.2,0.2,0.2]</code></p>
+<h3 id="not-yet-fixed">Not yet fixed</h3>
+<p>Importing this exported file into Blender results in a different scene.
+It seems the Blender Collada Importer ignores the top level axis-switch matrix somehow?
+FBX export and import is correct using the axis switch by choice.</p>
+<h3 id="fixed">FIXED</h3>
+<p>The wrong up most transformation is written by Assimp! </p>
+<ul>
+<li>Assimp::Importer io; io.SetPropertyBool(AI_CONFIG_IMPORT_COLLADA_IGNORE_UP_DIRECTION, true) </li>
+</ul>
+<p>Capsuled in <code>AssimpIO</code>-Object ("rmagine/map/AssimpIO.hpp").</p>
+<p>The following code snipped already corrects the wrong transformation imports.</p>
+<div class="highlight"><pre><span></span><code><span class="n">rm</span><span class="o">::</span><span class="n">AssimpIO</span><span class="w"> </span><span class="n">io</span><span class="p">;</span><span class="w"> </span>
+<span class="k">const</span><span class="w"> </span><span class="n">aiScene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="p">.</span><span class="n">ReadFile</span><span class="p">(</span><span class="s">&quot;file.dae&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+</code></pre></div>
+<p>With that, it is possible to default export Collada files with Blender, import them with rmagine and import them in Blender again, without any errors.</p>
+<h2 id="filmbox-fbx-exports">Filmbox (FBX) exports</h2>
+<p>Same problems as in DAE section. Set axis to:</p>
+<div class="highlight"><pre><span></span><code>Scale: 0.01
+Forward: Y Forward
+Up: Z Up
+</code></pre></div>
+<p>Then everything is exported as modelled. Imports into Blender again are working as well.
+Luckilly, the global scene transform is set to identity here.
+Maybe that is why the Import is working again: ignoring the scene transform is not important if its an identity transform.</p>
+<p>TODO: check if Gazebo importer ignores the scene transform</p>
+<h2 id="building-a-3d-map-from-2d-building-plan">Building a 3D map from 2D building plan</h2>
+<p>Using Blender Version 3.3.1</p>
+<h3 id="setting-up-a-2d-map-as-reference-image">Setting up a 2D Map as Reference image</h3>
+<p>Make sure to be in Object Mode</p>
+<ol>
+<li>Click top right on the z-axis to make the view orthograhic top down</li>
+<li>In Scene press Shift+A to open the Add Panel. Then select your Image and Load it into scene. The Image should now be located on your xy-plane</li>
+<li>Scale the Image to a size where you think you can work good with. The exact scale can be determined later.</li>
+<li>Enable Opacity of Image: Select Image and go to "Object Data Properties" (bottom right). Checkmark the Opacity Button</li>
+</ol>
+<h3 id="modelling">Modelling</h3>
+<p>To place single vertices in the scene we first have to enable an Add-On under <code>Edit -&gt; Preferences</code> called <code>Add Mesh: Extra Objects</code>.
+Then with Shift+A under the entry <code>Mesh</code> the option <code>Single Vert</code> should be available.
+Selecting <code>Single Vert</code> will place a single vertex in the origin and change to <code>Edit Mode</code>.
+A object should appear in the <code>Scene Collection</code> panel top right called <code>Vert</code>.</p>
+<ol>
+<li>Move the image so that the first vertex to set is in the origin</li>
+<li>Insert a single vertex. A new object should be created. The first vertex is placed in the Origin.</li>
+<li>Press <code>E</code> to extrude a vertex than click an endpoint to place the second vertex with an edge connecting both.</li>
+<li>Contour: By again pressing <code>E</code> you can create a path of vertices. I recommend to make a complete path along the contour of the building plan (without doors. Only walls).</li>
+<li>Walls: Once you have created a contour of edges go to <code>Edge Select</code>-Mode select everything. Press <code>E</code>and then <code>Z</code> to extrude the edges along the z-axis. Pull the walls to a arbitrary height (The exact scale is determined later).</li>
+<li>Ground Faces: Go to <code>Vertex Select</code>-Mode and select three ground Vertices you want to connect (Hold Shift). Press <code>F</code> to connect them to a Face.<ul>
+<li>If Faces are getting to long: Cut Wall-Face in two by selecting in in <code>Face Select</code> Mode and then pressing Ctrl+R</li>
+<li>Enable Statistics in Drop-Down Menu "Overlays" top right. If you notice during editing that there is more than one Vertex at one point: Select both of them in <code>Vertex Select</code>-Mode. The Right-Click and <code>Merge Vertices - Collapse</code>.</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
