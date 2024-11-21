@@ -1,6 +1,6 @@
 # rmagine
 
-These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.github.io/rmagine_ros](https://uos.github.io/rmagine_docs)
+These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.github.io/rmagine_docs](https://uos.github.io/rmagine_docs)
 
 ## Build locally
 
