@@ -1,6 +1,6 @@
 # Maps
 
-Triangle Meshes can be stored in various file formats. Rmagine utilizes the [Open Asset Import Library (assimp)](https://github.com/assimp/assimp) in order to support a wide range of well known file formats. After loading the raw scene graph buffers with Assimp it is converted into Rmagines internal scene graph structure. Dependend on the computation backend `Embree` or `OptiX` the scene graph is prepared for fast ray traversals by building the required acceleration structures.
+Triangle Meshes can be stored in various file formats. Rmagine utilizes the [Open Asset Import Library (assimp)](https://github.com/assimp/assimp) in order to support a wide range of well known file formats. After loading the raw scene graph buffers with Assimp it is converted into Rmagines internal scene graph structure. Dependent on the computation backend `Embree` or `OptiX` the scene graph is prepared for fast ray traversals by building the required acceleration structures.
 
 ## Embree Map
 
@@ -34,5 +34,5 @@ int main(int argc, char** argv)
 
 ## Properties
 
-After loading, the map consists of a complete scene graph. It then usually passed to a simulator (see next gettingstarted-sections).
-The advanced [Map](library/Map)-section describes how to modify or create the internal maps from scratch.
+After loading, the map consists of a complete scene graph. It then usually passed to a simulator (see next "Getting Started"-sections).
+The advanced [Map](library/map)-section describes how to modify or create the internal maps from scratch.

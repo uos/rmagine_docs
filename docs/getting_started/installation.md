@@ -14,7 +14,7 @@ user@pc:~$ sudo apt install libassimp-dev
 
 ## Backbones
 
-![rmagine_backends](../resources/img/rmagine_backends.png)
+![rmagine_backends](/resources/img/rmagine_backends.png)
 
 Rmagine provides an interface to integrate ray tracing libraries, we call backbones. All of these backbones are optional. So far we integrated Intel Embree and NVIDIA OptiX.
 
@@ -30,8 +30,7 @@ user@pc:~/embree/build$ make -j`nproc`
 user@pc:~/embree/build$ sudo make install
 ```
 
-
-<!-- For older Embree versions we refer to [this](Supplementary-Embree). -->
+For older Embree versions we refer to [this](/extra/embree3).
 
 ### OptiX Backbone (optional)
 

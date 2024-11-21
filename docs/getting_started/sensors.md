@@ -3,8 +3,8 @@
 Rmagine supports several configurations of commonly used range sensors as Spherical, Pinhole or even fully customizable O1Dn and OnDn models.
 The following image shows how the results could look like using these different models.
 
-![sensor_models_3d](../resources/img/sensor_models_3d.png) 
-![sensor_models_ortho](../resources/img/sensor_models_ortho.png)
+![sensor_models_3d](/resources/img/sensor_models_3d.png) 
+![sensor_models_ortho](/resources/img/sensor_models_ortho.png)
 
 The next instructions show how to initialize each model individually.
 

@@ -1,6 +1,6 @@
 # Simulation
 
-![simulation_attributes](../resources/img/simulation_attributes.png)
+![simulation_attributes](/resources/img/simulation_attributes.png)
 
 ## Requirements
 

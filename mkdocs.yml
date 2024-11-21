@@ -11,8 +11,8 @@ theme:
       - navigation.instant
       - navigation.tabs
       - navigation.sections
-    # logo: img/mbf_icon.png
-    # favicon: img/mbf_icon.png
+    logo: resources/img/rmagine_logo.png
+    favicon: resources/img/rmagine_icon.png
     palette:
       primary: cyan
 

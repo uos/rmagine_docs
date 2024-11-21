@@ -5,7 +5,7 @@ For development and testing we include some meshes inside our repository in the 
 
 ## sphere.ply
 
-![sphere.ply](../resources/img/rmagine_dat_sphere.png)
+![sphere.ply](/resources/img/rmagine_dat_sphere.png)
 
 ```bash
 user@pc:~/rmagine/build$ ./bin/rmagine_map_info ../dat/sphere.ply
@@ -41,7 +41,7 @@ Scene Graph:
 
 ## triangle.ply
 
-![triangle.ply](../resources/img/rmagine_dat_triangle.png)
+![triangle.ply](/resources/img/rmagine_dat_triangle.png)
 
 ```bash
 user@pc:~/rmagine/build$ ./bin/rmagine_map_info ../dat/triangle.ply
@@ -77,7 +77,7 @@ Scene Graph:
 
 ## box_rot_trans_scaled.dae
 
-![box_rot_trans_scaled.dae](../resources/img/rmagine_dat_box_rot_trans_scaled.png)
+![box_rot_trans_scaled.dae](/resources/img/rmagine_dat_box_rot_trans_scaled.png)
 
 ```bash
 user@pc:~/rmagine/build$ ./bin/rmagine_map_info ../dat/box_rot_trans_scaled.dae
@@ -146,7 +146,7 @@ Scene Graph:
 
 ## two_cubes.dae
 
-![two_cubes.dae](../resources/img/rmagine_dat_two_cubes.png)
+![two_cubes.dae](/resources/img/rmagine_dat_two_cubes.png)
 
 ```bash
 user@pc:~/rmagine/build$ ./bin/rmagine_map_info ../dat/two_cubes.dae
@@ -239,7 +239,7 @@ Scene Graph:
 
 ## many_objects.dae
 
-![many_objects.dae](../resources/img/rmagine_dat_many_objects.png)
+![many_objects.dae](/resources/img/rmagine_dat_many_objects.png)
 
 ```bash
 user@pc:~/rmagine/build$ ./bin/rmagine_map_info ../dat/many_objects.dae

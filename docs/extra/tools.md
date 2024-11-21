@@ -153,7 +153,7 @@ Usage: ./bin/rmagine_synthetic mesh_type mesh_file
 
 | | |
 |:----:|:----:|
-|  ![plane](../resources/img/rmagine_synthetic_plane.png) | ![cube](../resources/img/rmagine_synthetic_cube.png)  |
+|  ![plane](/resources/img/rmagine_synthetic_plane.png) | ![cube](/resources/img/rmagine_synthetic_cube.png)  |
 | `rmagine_synthetic plane plane.ply` | `rmagine_synthetic cube cube.ply` |
-|  ![sphere](../resources/img/rmagine_synthetic_sphere.png) | ![cylinder](../resources/img/rmagine_synthetic_cylinder.png)  |
+|  ![sphere](/resources/img/rmagine_synthetic_sphere.png) | ![cylinder](/resources/img/rmagine_synthetic_cylinder.png)  |
 | `rmagine_synthetic sphere sphere.ply` | `rmagine_synthetic cylinder cylinder.ply` |

@@ -2,9 +2,9 @@
 
 The general computing flow is as follows. 
 
-![rmagine_example](../resources/img/rmagine.drawio.png)
+![rmagine_example](/resources/img/rmagine.drawio.png)
 
-Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an `EmbreeMap` or `OptixMap`. The Prefix of the `Simulator` is either `Embree` for CPU computation or `Optix` for GPU computation. The suffix of the Simulator is dependend on which sensor model you want to simulate. A few examples:
+Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an `EmbreeMap` or `OptixMap`. The Prefix of the `Simulator` is either `Embree` for CPU computation or `Optix` for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:
 
 - `SphereSimulatorEmbree` - Simulate a velodyne on CPU
 - `PinholeSimulatorOptix`- Simulate a depth camera on GPU
@@ -14,7 +14,7 @@ Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relat
 
 Now we want to construct the following pipeline.
 
-![rmagine_example_1](../resources/img/rmagine_example_1.drawio.png)
+![rmagine_example_1](/resources/img/rmagine_example_1.drawio.png)
 
 ```cpp
 
@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 
 Now we want to construct the following pipeline.
 
-![rmagine_example_1](../resources/img/rmagine_example_2.drawio.png)
+![rmagine_example_1](/resources/img/rmagine_example_2.drawio.png)
 
 The green cells are memory objects on GPU as you see in the following code snippet.
 
@@ -146,7 +146,7 @@ int main(int argc, char** argv)
 
 Now we want to construct the following pipeline.
 
-![rmagine_example_1](../resources/img/rmagine_example_3.drawio.png)
+![rmagine_example_1](/resources/img/rmagine_example_3.drawio.png)
 
 
 ```cpp

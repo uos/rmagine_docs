@@ -1,6 +1,6 @@
 Currently noise models are implemented as postprocessing steps that modify the simulated ranges. Any of the following noise models can be chained to generate complex combined noise models.
-The Noise models are implented equally both on GPU and CPU.
-Thus the developer can manage to apply noise to the data without downloading or uploading the data from GPU to CPU or vice versa.
+The Noise models are implemented equally both for GPU and CPU.
+Thus the developer can apply noise to the data without downloading or uploading the data from GPU to CPU or vice versa.
 
 
 1. Gaussian Noise
@@ -13,7 +13,7 @@ Apply gaussian noise $N(\mu, \sigma)$ to simulated ranges.
 | `stddev` | standard deviation $\sigma$ of normal distributed noise |
 
 
-![rmagine_noise_gaussian](../resources/img/rmagine_noise_gaussian.png)
+![rmagine_noise_gaussian](/resources/img/rmagine_noise_gaussian.png)
 
 
 Example CPU:
@@ -74,7 +74,7 @@ Apply gaussian noise $N(\mu, \sigma_r)$ to simulated ranges. Here, the standard 
 | `stddev` | standard deviation $\sigma$ of normal distributed noise |
 | `range_exp` | range exponent $c$ to compute range based stddev: $ \sigma_r = \sigma \cdot r^{c} $ |
 
-![rmagine_noise_rel_gaussian](../resources/img/rmagine_noise_rel_gaussian.png)
+![rmagine_noise_rel_gaussian](/resources/img/rmagine_noise_rel_gaussian.png)
 
 Example CPU:
 
@@ -137,7 +137,7 @@ Parameters:
 | `return_prob` | Probability of a ray hitting dust returns to sender depending on particle distance |
 
 
-![rmagine_noise_dust](../resources/img/rmagine_noise_dust.png)
+![rmagine_noise_dust](/resources/img/rmagine_noise_dust.png)
 
 
 Example CPU:
