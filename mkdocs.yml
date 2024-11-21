@@ -1,0 +1,47 @@
+site_name: Rmagine Documentation
+site_url: https://uos.github.io
+
+repo_name: Github
+repo_url: https://github.com/uos/rmagine
+
+docs_dir: docs
+theme:
+    name: material
+    features:
+      - navigation.instant
+      - navigation.tabs
+      - navigation.sections
+    # logo: img/mbf_icon.png
+    # favicon: img/mbf_icon.png
+    palette:
+      primary: cyan
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - admonition
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Getting Started: 
+    - Overview: getting_started/overview.md
+    - Installation: getting_started/installation.md
+    - Integration: getting_started/integration.md
+    - Maps: getting_started/maps.md
+    - Sensors: getting_started/sensors.md
+    - Simulation: getting_started/simulation.md
+    - Problem Modelling: getting_started/problem_modelling.md
+    - Noise: getting_started/noise.md
+  - Library:
+    - Concepts: library/concepts.md
+    - Math: library/math.md
+    - Memory: library/memory.md
+    - Maps: library/maps.md
+  - Extra:
+    - Tools: extra/tools.md
+    - Data: extra/data.md
+    - News: extra/news.md
+    - Embree 3: extra/embree3.md
