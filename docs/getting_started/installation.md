@@ -30,7 +30,7 @@ user@pc:~/embree/build$ make -j`nproc`
 user@pc:~/embree/build$ sudo make install
 ```
 
-For older Embree versions we refer to [this](/extra/embree3).
+For older Embree versions we refer to [this](/extra/embree3.md).
 
 ### OptiX Backbone (optional)
 

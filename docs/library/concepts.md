@@ -18,15 +18,15 @@ Rmagine has the following top-level structure of directories:
 Contains all math related types and functions. 
 All math datatypes are completely CUDA compatible.
 See `rmagine/math/types.h` for all types.
-See [Math](/library/math) section for more details.
+See [Math](/library/math.md) section for more details.
 
 ## Types
 
-Fundamental types required for simulations, e.g. [sensor models](/getting_started/sensors). Depends on math types.
+Fundamental types required for simulations, e.g. [sensor models](/getting_started/sensors.md). Depends on math types.
 
 ## Util
 
-Utility functions. For exaple, including `rmagine/util/prints.h` lets you print every math types via std::cout.
+Utility functions. For exaple, including `rmagine/util/prints.h` lets you print every math types via `std::cout`.
 
 ```cpp
 #include <iostream>
@@ -73,7 +73,7 @@ int main(int argc, char* argv)
 
 # Map
 
-All classes and functions that relate to map construction and map modifications. See [Getting Started - Maps](/getting_started/maps) for a introduction to map loading. Go to [Library - Maps](/library/maps) for a more detailed descriptions of how to build Rmagine maps.
+All classes and functions that relate to map construction and map modifications. See [Getting Started - Maps](/getting_started/maps.md) for a introduction to map loading. Go to [Library - Maps](/library/maps.md) for a more detailed descriptions of how to build Rmagine maps.
 
 # Simulation
 
