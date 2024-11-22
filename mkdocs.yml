@@ -1,5 +1,5 @@
 site_name: Rmagine Documentation
-site_url: https://uos.github.io
+site_url: https://uos.github.io/rmagine_docs
 
 repo_name: Github
 repo_url: https://github.com/uos/rmagine
@@ -23,6 +23,10 @@ markdown_extensions:
   - pymdownx.details
   - admonition
   - attr_list
+
+validation:
+  links:
+    absolute_links: relative_to_docs
 
 nav:
   - Home: index.md
