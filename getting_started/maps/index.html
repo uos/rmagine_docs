@@ -1009,7 +1009,7 @@
 
 
 <h1 id="maps">Maps</h1>
-<p>Triangle Meshes can be stored in various file formats. Rmagine utilizes the <a href="https://github.com/assimp/assimp">Open Asset Import Library (assimp)</a> in order to support a wide range of well known file formats. After loading the raw scene graph buffers with Assimp it is converted into Rmagines internal scene graph structure. Dependent on the computation backend <code>Embree</code> or <code>OptiX</code> the scene graph is prepared for fast ray traversals by building the required acceleration structures.</p>
+<p>Triangle meshes can be stored in various file formats. Rmagine utilizes the <a href="https://github.com/assimp/assimp">Open Asset Import Library (assimp)</a> in order to support a wide range of well known file formats. After loading the raw scene graph buffers with Assimp, they are converted into Rmagines internal scene graph structure. Dependent on the computation backend <code>Embree</code> or <code>OptiX</code> the scene graph is prepared for fast ray traversals by building the required acceleration structures.</p>
 <h2 id="embree-map">Embree Map</h2>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/map/EmbreeMap.hpp&gt;</span>
 
@@ -1035,7 +1035,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="properties">Properties</h2>
-<p>After loading, the map consists of a complete scene graph. It then usually passed to a simulator (see next "Getting Started"-sections).
+<p>After loading, the map consists of a complete scene graph. It then usually is passed to a simulator (see next "Getting Started"-sections).
 The advanced <a href="../../library/maps/">Map</a>-section describes how to modify or create the internal maps from scratch.</p>
 
 
