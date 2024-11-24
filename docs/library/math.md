@@ -261,9 +261,6 @@ int main(int argc, char** argv)
 ```
 
 
-# Math - Advanced
-
-
 ## Changing Precisions
 
 What you have used so far are all types that itself are aliases to specializations of templated math classes:

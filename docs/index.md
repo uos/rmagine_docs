@@ -30,4 +30,20 @@ Rmagine allows a robot to simulate sensor data for arbitrary range sensors direc
 - [Data](extra/data)
 - [News](extra/news)
 - [Embree 3](extra/embree3)
+- [Contributions](extra/contributions)
+
+## Contributions
+
+You are welcome to contribute to the docs of [Rmagine](https://github.com/uos/rmagine)! Thorough and clear documentation is essential. You can help us by correcting mistakes, improving content, or adding examples that facilitate user navigation and usage of the project. Please submit any documentation-related issues to the repository https://github.com/uos/rmagine_docs. If you're making fixes or adding examples, don’t hesitate to submit a pull request afterward!
+
+### PR workflow
+
+How to contribute to this documentation via pull requests:
+
+1. Fork the repository: https://github.com/uos/rmagine_docs.
+2. Make changes on your forked repository.
+3. Check locally on your machine if mkdocs is able to compile your changes ([instructions](https://github.com/uos/rmagine_docs)).
+4. Go to Github and click "Pull Request", select this repository's "main" branch as target.
+5. If you added new content, please provide a brief explanation of why you believe it is beneficial for the documentation.
+6. Send PR
 
