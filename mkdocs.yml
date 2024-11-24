@@ -11,6 +11,7 @@ theme:
       - navigation.instant
       - navigation.tabs
       - navigation.sections
+      - navigation.footer
     logo: resources/img/rmagine_logo.png
     favicon: resources/img/rmagine_icon.png
     palette:
