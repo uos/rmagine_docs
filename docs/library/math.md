@@ -356,5 +356,9 @@ int main(int argc, char** argv)
         buffer_a_gpu.raw(),
         buffer_b_gpu.raw(),
         buffer_a_gpu.size());
+    // A[i]+=B[i] done.
+    // buffer_a_gpu contains changed elements now   
+    
+    return 0;
 }
 ```
