@@ -4,7 +4,7 @@ The general computing flow is as follows.
 
 ![rmagine_example](/resources/img/rmagine.drawio.png)
 
-Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an `EmbreeMap` or `OptixMap`. The Prefix of the `Simulator` is either `Embree` for CPU computation or `Optix` for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:
+Tsb is the transform from sensor to base frame. Or in other words: The sensor pose relative to the robot base. The map can be either a pointer to an `EmbreeMap` or `OptixMap`. The Prefix of the `Simulator` is either `Embree` for CPU computation or `Optix` for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:
 
 - `SphereSimulatorEmbree` - Simulate a velodyne on CPU
 - `PinholeSimulatorOptix`- Simulate a depth camera on GPU

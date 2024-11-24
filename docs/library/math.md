@@ -1,21 +1,24 @@
-# Math
+# Rmagine - Math-Library
 
-The following descriptions are made reading the Code located in `rmagine/math/types.h`. So it is recommended to open the file alongside.
+Rmagine provides it's own thin math library. It's located in `rmagine::core` target. We decided to do so after having problems with Eigen in CUDA code (corrupt memory after using math functions).
+This thin math library was specifically designed to enable the sharing of functions between CPU and GPU code, and it has been tested to ensure consistent results for both CUDA and CPU implementations.
+The following descriptions are made reading the code located in `rmagine/math/types.h`.
+So it is recommended to open the file alongside.
 
 ## Points and Translations
 
-A floating coordinate can represent different things such as a point, a vector or the translational part of a transformation.
+A floating-point coordinate can represent different things such as a point, a vector or the translational part of a transformation.
 For all of them, we provide the same data structure: `Vector`.
 
-- `Vector2`: x,y all fp32
-- `Vector3`: x,y,z all fp32
+- `rm::Vector2`: x,y all fp32
+- `rm::Vector3`: x,y,z all fp32
 
 Aliases:
-- `Vector` = `Vector3`;
-- `Point` = `Vector3`;
-- `Vertex` = `Vector3`;
+- `rm::Vector` = `rm::Vector3`;
+- `rm::Point` = `rm::Vector3`;
+- `rm::Vertex` = `rm::Vector3`;
 
-We also implemented commonly used functions `Vector`. Example Usage:
+We also implemented commonly used functions `Vector`:
 
 ```cpp
 #include <rmagine/math/types.h>
@@ -46,7 +49,7 @@ p3 = p1 / 2.0;
 
 ## Rotations
 
-In Rmagine we provide three different representations of rotations: Euler Angles, a Rotation Matrix and a Quaternion.
+In Rmagine we provide three different representations of rotations: Euler angles (`rm::EulerAngles`), a rotation matrix (`rm::Matrix3x3`) and a quaternion (`rm::Quaternion`).
 In general, we adhere to the ROS conventions, especially those that are listed in [REP-103](https://www.ros.org/reps/rep-0103.html).
 
 
@@ -92,7 +95,9 @@ int main(int argc, char** argv)
 }
 ```
 
-Conversions
+### Conversions
+
+We provide conversions between different rotation representations:
 
 ```cpp
 #include <rmagine/math/types.h>
@@ -131,7 +136,7 @@ int main(int argc, char** argv)
 }
 ```
 
-Math
+and some math functions, e.g. to apply a rotation to another or to a point in space:
 
 ```cpp
 #include <rmagine/math/types.h>
@@ -162,8 +167,10 @@ int main(int argc, char** argv)
 ```
 
 
-Eigen Compatibility
+### Eigen Compatibility
 
+We ensure compatibility with Eigen by sharing the same memory layout (for now).
+This allows to do fast mappings between rmagine and Eigen types.
 
 ```cpp
 #include <rmagine/math/types.h>
@@ -198,9 +205,10 @@ int main(int argc, char** argv)
 
 
 ## Transformations
-In Rmagine, a Transformation is an operation that maps a source Euclidean space to a target Euclidean space, implemented as Isometry, since we only implemented the rotational and translational part (no scale). We decided to represent the rotational part as Quaternion to avoid Gimbal Locks that occur e.g. using a Euler Angles representation.
 
-In Rmagine, we use a Transformation-Type for a pose as well.
+In Rmagine, a transformation (`rm::Transform`) is an operation that maps a source Euclidean space to a target Euclidean space, implemented as isometry, since we only implemented the rotational and translational part (no scale). We decided to represent the rotational part as quaternion (`rm::Quaternion`) to avoid [gimbal locks](https://en.wikipedia.org/wiki/Gimbal_lock) that occur e.g. using an Euler angles representation.
+
+In Rmagine, we use a `Transform` type for a pose as well.
 A sensor pose entries correspond to a transformation that maps the space with the sensor as origin to the space where the pose is located:
 
 ```cpp
@@ -222,22 +230,20 @@ int main(int argc, char** argv)
 }
 ```
 
-To express a Transformation that is not isometric, for example because it consists of a Scale part, use `rm::Matrix4x4` and the Linear Algebra Functions of `rmagine/math/linalg.h`instead:
+To express a transformation that is not isometric, for example because it consists of a scale part, use `rm::Matrix4x4` and the linear algebra functions of `rmagine/math/linalg.h` instead:
 
 ```cpp
 #include <rmagine/math/types.h>
 namespace rm = rmagine;
-using namespace rmagine;
 
 int main(int argc, char** argv)
 {
     // pose of the sensor in the map
-    Transform T = {
+    rm::Transform T = {
         rm::Quaternion::Identity(), // rotation
         {0.0, 1.0, 2.0} // translation
     };
     rm::Vector3 s = {1.2, 1.2, 1.2}; // scale each dimension with 1.2
-
 
     // pack to Matrix4x4
     rm::Matrix4x4 M = rm::compose(T, s);
@@ -251,5 +257,104 @@ int main(int argc, char** argv)
     rm::decompose(~M, T, s);
 
     return 0;
+}
+```
+
+
+# Math - Advanced
+
+
+## Changing Precisions
+
+What you have used so far are all types that itself are aliases to specializations of templated math classes:
+
+
+
+```c++
+// defaults
+#define DEFAULT_FP_PRECISION 32
+using DefaultFloatType = float;
+
+// default types
+using Vector3 = Vector3_<DefaultFloatType>;
+using Vector2 = Vector2_<DefaultFloatType>;
+using Matrix2x2 = Matrix_<DefaultFloatType, 2, 2>;
+using Matrix3x3 = Matrix_<DefaultFloatType, 3, 3>;
+using Matrix4x4 = Matrix_<DefaultFloatType, 4, 4>;
+using Quaternion = Quaternion_<DefaultFloatType>;
+using EulerAngles = EulerAngles_<DefaultFloatType>;
+using Transform = Transform_<DefaultFloatType>;
+using AABB = AABB_<DefaultFloatType>;
+```
+(Location: `rmagine/math/types/definitions.h`)
+
+However, Rmagine also supports other floating-point precisions such as double:
+
+```c++
+using Vector2f = Vector2_<float>;
+using Vector2u = Vector2_<uint32_t>;
+using Vector2i = Vector2_<int32_t>;
+using Vector3f = Vector3_<float>;
+using Matrix2x2f = Matrix_<float, 2, 2>;
+using Matrix3x3f = Matrix_<float, 3, 3>;
+using Matrix4x4f = Matrix_<float, 4, 4>;
+using Quaternionf = Quaternion_<float>;
+using EulerAnglesf = EulerAngles_<float>;
+using Transformf = Transform_<float>;
+using AABBf = AABB_<float>;
+
+using Vector2d = Vector2_<double>;
+using Vector3d = Vector3_<double>;
+using Matrix2x2d = Matrix_<double, 2, 2>;
+using Matrix3x3d = Matrix_<double, 3, 3>;
+using Matrix4x4d = Matrix_<double, 4, 4>;
+using Quaterniond = Quaternion_<double>;
+using EulerAnglesd = EulerAngles_<double>;
+using Transformd = Transform_<double>;
+using AABBd = AABB_<double>;
+```
+(Location: `rmagine/math/types/definitions.h`)
+
+In addition, this makes it possible to uses custom precisions, and still have the full range of functions available for both CPU and CUDA code.
+
+WARNING: The following code is a draft and was never tested, hence it doesn't neccesarily needs to compile. It shows how one would declare and use a 16 bit float vector.
+
+```c++
+#include <cuda_fp16.hpp>
+using MyCudaHalfVector = rm::Vector3_<__half>;
+
+// add_inplace kernel
+// compute 'A[i] += B[i]', massively parallel on the GPU
+__global__ void add_inplace_kernel(
+    MyCudaHalfVector* vec_a,
+    const MyCudaHalfVector* vec_b, 
+    size_t n)
+{
+    const unsigned int tid = threadIdx.x;   
+    if(tid < n)
+    {
+        // this invokes a rmagine function using the 
+        // using fp16 precision
+        vec_a[tid] += vec_b[tid];
+    }
+}
+
+int main(int argc, char** argv)
+{
+    // buffer of CUDA-half vectors located in RAM
+    rm::Memory<MyCudaHalfVector, rm::RAM> buffer_cpu(100);
+    // TODO fill buffer
+
+    // upload all CUDA-half vectors from RAM to VRAM_CUDA, twice
+    rm::Memory<MyCudaHalfVector, rm::VRAM_CUDA> buffer_a_gpu 
+        = buffer_cpu;
+    rm::Memory<MyCudaHalfVector, rm::VRAM_CUDA> buffer_b_gpu 
+        = buffer_cpu;
+
+    // call CUDA kernel 'add_inplace_kernel'
+    add_inplace_kernel<<<buffer_gpu.size(), 1>>>(
+        buffer_a_gpu.raw(),
+        buffer_b_gpu.raw(),
+        buffer_a_gpu.size());
 }
 ```
