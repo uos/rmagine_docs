@@ -2,11 +2,11 @@
 ![rmagine_teaser_image](resources/img/sensor_models_3d.png)
 # Rmagine
 
-Rmagine allows a robot to simulate sensor data for arbitrary range sensors directly on board via raytracing. Since robots typically only have limited computational resources, Rmagine aims at being flexible and lightweight, while scaling well even to large environment maps. It runs on several platforms like Laptops or embedded computing boards like Nvidia Jetson by putting an unified API over specific proprietary libraries provided by the hardware manufacturers. This work is designed to support the future development of robotic applications depending on simulation of range data that could previously not be computed in reasonable time on mobile systems.
+[Rmagine](https://github.com/uos/rmagine) allows a robot to simulate sensor data for arbitrary range sensors directly on board via raytracing. Since robots typically only have limited computational resources, [Rmagine](https://github.com/uos/rmagine) aims at being flexible and lightweight, while scaling well even to large environment maps. It runs on several platforms like Laptops or embedded computing boards like Nvidia Jetson by putting an unified API over specific proprietary libraries provided by the hardware manufacturers. This work is designed to support the future development of robotic applications depending on simulation of range data that could previously not be computed in reasonable time on mobile systems.
 
 ## Design Goals
 
-Rmagine is mainly designed for robotic applications:
+[Rmagine](https://github.com/uos/rmagine) is mainly designed for robotic applications:
 
 - Perform multiple sensor simulations simultaneously and in realtime.
 - Compute the same operations on different computing devices (CPU, GPU..).
@@ -42,7 +42,7 @@ When using the Rmagine library or any related ideas in your scientific work, ple
 
 ## Table of Contents
 
-This documentation cosists of several examples, guides and conceptual explanations to give users a more thourough understanding about Rmagine.
+This documentation cosists of several examples, guides and conceptual explanations to give users a more thourough understanding of [Rmagine](https://github.com/uos/rmagine).
 As the name tells, new users should make themselfs familar with **Getting Started** first, before continuing to the more advanced examples.
 
 **Rmagine**
@@ -77,13 +77,13 @@ As the name tells, new users should make themselfs familar with **Getting Starte
 
 ## Contributions
 
-You are welcome to contribute to the docs of [Rmagine](https://github.com/uos/rmagine)! Thorough and clear documentation is essential. You can help us by correcting mistakes, improving content, or adding examples that facilitate user navigation and usage of the project. Please submit any documentation-related issues to the repository https://github.com/uos/rmagine_docs. If you're making fixes or adding examples, don’t hesitate to submit a pull request afterward!
+You are welcome to contribute to the docs of [Rmagine](https://github.com/uos/rmagine)! Thorough and clear documentation is essential. You can help us by correcting mistakes, improving content, or adding examples that facilitate user navigation and usage of the project. Please submit any documentation-related issues to the repository [rmagine_docs](https://github.com/uos/rmagine_docs). If you're making fixes or adding examples, don’t hesitate to submit a pull request afterward!
 
 ### PR workflow
 
 How to contribute to this documentation via pull requests:
 
-1. Fork the repository: https://github.com/uos/rmagine_docs.
+1. Fork the repository: [rmagine_docs](https://github.com/uos/rmagine_docs).
 2. Make changes on your forked repository.
 3. Check locally on your machine if mkdocs is able to compile your changes ([instructions](https://github.com/uos/rmagine_docs)).
 4. Go to Github and click "Pull Request", select this repository's "main" branch as target.
