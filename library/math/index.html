@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#math" class="md-skip">
+        <a href="#rmagine-math-library" class="md-skip">
           Skip to content
         </a>
       
@@ -667,6 +667,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigen-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigen Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -909,6 +933,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conversions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigen-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigen Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -938,20 +986,23 @@
   
 
 
-<h1 id="math">Math</h1>
-<p>The following descriptions are made reading the Code located in <code>rmagine/math/types.h</code>. So it is recommended to open the file alongside.</p>
+<h1 id="rmagine-math-library">Rmagine - Math-Library</h1>
+<p>Rmagine provides it's own thin math library. It's located in <code>rmagine::core</code> target. We decided to do so after having problems with Eigen in CUDA code (corrupt memory after using math functions).
+This thin math library was specifically designed to enable the sharing of functions between CPU and GPU code, and it has been tested to ensure consistent results for both CUDA and CPU implementations.
+The following descriptions are made reading the code located in <code>rmagine/math/types.h</code>.
+So it is recommended to open the file alongside.</p>
 <h2 id="points-and-translations">Points and Translations</h2>
-<p>A floating coordinate can represent different things such as a point, a vector or the translational part of a transformation.
+<p>A floating-point coordinate can represent different things such as a point, a vector or the translational part of a transformation.
 For all of them, we provide the same data structure: <code>Vector</code>.</p>
 <ul>
-<li><code>Vector2</code>: x,y all fp32</li>
-<li><code>Vector3</code>: x,y,z all fp32</li>
+<li><code>rm::Vector2</code>: x,y all fp32</li>
+<li><code>rm::Vector3</code>: x,y,z all fp32</li>
 </ul>
 <p>Aliases:
-- <code>Vector</code> = <code>Vector3</code>;
-- <code>Point</code> = <code>Vector3</code>;
-- <code>Vertex</code> = <code>Vector3</code>;</p>
-<p>We also implemented commonly used functions <code>Vector</code>. Example Usage:</p>
+- <code>rm::Vector</code> = <code>rm::Vector3</code>;
+- <code>rm::Point</code> = <code>rm::Vector3</code>;
+- <code>rm::Vertex</code> = <code>rm::Vector3</code>;</p>
+<p>We also implemented commonly used functions <code>Vector</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
 
@@ -977,7 +1028,7 @@ For all of them, we provide the same data structure: <code>Vector</code>.</p>
 <span class="c1">// ...</span>
 </code></pre></div>
 <h2 id="rotations">Rotations</h2>
-<p>In Rmagine we provide three different representations of rotations: Euler Angles, a Rotation Matrix and a Quaternion.
+<p>In Rmagine we provide three different representations of rotations: Euler angles (<code>rm::EulerAngles</code>), a rotation matrix (<code>rm::Matrix3x3</code>) and a quaternion (<code>rm::Quaternion</code>).
 In general, we adhere to the ROS conventions, especially those that are listed in <a href="https://www.ros.org/reps/rep-0103.html">REP-103</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1019,7 +1070,8 @@ In general, we adhere to the ROS conventions, especially those that are listed i
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Conversions</p>
+<h3 id="conversions">Conversions</h3>
+<p>We provide conversions between different rotation representations:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
 
@@ -1055,7 +1107,7 @@ In general, we adhere to the ROS conventions, especially those that are listed i
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Math</p>
+<p>and some math functions, e.g. to apply a rotation to another or to a point in space:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1082,7 +1134,9 @@ In general, we adhere to the ROS conventions, especially those that are listed i
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Eigen Compatibility</p>
+<h3 id="eigen-compatibility">Eigen Compatibility</h3>
+<p>We ensure compatibility with Eigen by sharing the same memory layout (for now).
+This allows to do fast mappings between rmagine and Eigen types.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1113,8 +1167,8 @@ In general, we adhere to the ROS conventions, especially those that are listed i
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="transformations">Transformations</h2>
-<p>In Rmagine, a Transformation is an operation that maps a source Euclidean space to a target Euclidean space, implemented as Isometry, since we only implemented the rotational and translational part (no scale). We decided to represent the rotational part as Quaternion to avoid Gimbal Locks that occur e.g. using a Euler Angles representation.</p>
-<p>In Rmagine, we use a Transformation-Type for a pose as well.
+<p>In Rmagine, a transformation (<code>rm::Transform</code>) is an operation that maps a source Euclidean space to a target Euclidean space, implemented as isometry, since we only implemented the rotational and translational part (no scale). We decided to represent the rotational part as quaternion (<code>rm::Quaternion</code>) to avoid <a href="https://en.wikipedia.org/wiki/Gimbal_lock">gimbal locks</a> that occur e.g. using an Euler angles representation.</p>
+<p>In Rmagine, we use a <code>Transform</code> type for a pose as well.
 A sensor pose entries correspond to a transformation that maps the space with the sensor as origin to the space where the pose is located:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
@@ -1133,20 +1187,18 @@ A sensor pose entries correspond to a transformation that maps the space with th
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>To express a Transformation that is not isometric, for example because it consists of a Scale part, use <code>rm::Matrix4x4</code> and the Linear Algebra Functions of <code>rmagine/math/linalg.h</code>instead:</p>
+<p>To express a transformation that is not isometric, for example because it consists of a scale part, use <code>rm::Matrix4x4</code> and the linear algebra functions of <code>rmagine/math/linalg.h</code> instead:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rmagine/math/types.h&gt;</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">rmagine</span><span class="p">;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// pose of the sensor in the map</span>
-<span class="w">    </span><span class="n">Transform</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Transform</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">rm</span><span class="o">::</span><span class="n">Quaternion</span><span class="o">::</span><span class="n">Identity</span><span class="p">(),</span><span class="w"> </span><span class="c1">// rotation</span>
 <span class="w">        </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">}</span><span class="w"> </span><span class="c1">// translation</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Vector3</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">};</span><span class="w"> </span><span class="c1">// scale each dimension with 1.2</span>
-
 
 <span class="w">    </span><span class="c1">// pack to Matrix4x4</span>
 <span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Matrix4x4</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rm</span><span class="o">::</span><span class="n">compose</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
@@ -1158,6 +1210,93 @@ A sensor pose entries correspond to a transformation that maps the space with th
 <span class="w">    </span><span class="c1">// unpack inverse: operator~ works only because of &#39;using namespace rmagine;&#39;</span>
 <span class="w">    </span><span class="c1">// - Alternative: Matrix4x4::inv() </span>
 <span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">decompose</span><span class="p">(</span><span class="o">~</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="math-advanced">Math - Advanced</h1>
+<h2 id="changing-precisions">Changing Precisions</h2>
+<p>What you have used so far are all types that itself are aliases to specializations of templated math classes:</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// defaults</span>
+<span class="cp">#define DEFAULT_FP_PRECISION 32</span>
+<span class="k">using</span><span class="w"> </span><span class="n">DefaultFloatType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">float</span><span class="p">;</span>
+
+<span class="c1">// default types</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector3_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector2_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix2x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix3x3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix4x4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Quaternion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quaternion_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">EulerAngles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EulerAngles_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Transform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Transform_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">AABB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AABB_</span><span class="o">&lt;</span><span class="n">DefaultFloatType</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+(Location: <code>rmagine/math/types/definitions.h</code>)</p>
+<p>However, Rmagine also supports other floating-point precisions such as double:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Vector2f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector2_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector2u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector2_</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector2i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector2_</span><span class="o">&lt;</span><span class="kt">int32_t</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector3f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector3_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix2x2f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix3x3f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix4x4f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Quaternionf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quaternion_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">EulerAnglesf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EulerAngles_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Transformf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Transform_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">AABBf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AABB_</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">Vector2d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector2_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Vector3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector3_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix2x2d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix3x3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Matrix4x4d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Matrix_</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Quaterniond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Quaternion_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">EulerAnglesd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EulerAngles_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Transformd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Transform_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">AABBd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AABB_</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+(Location: <code>rmagine/math/types/definitions.h</code>)</p>
+<p>In addition, this makes it possible to uses custom precisions, and still have the full range of functions available for both CPU and CUDA code.</p>
+<p>WARNING: The following code is a draft and was never tested, hence it doesn't neccesarily needs to compile. It shows how one would declare and use a 16 bit float vector.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cuda_fp16.hpp&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">MyCudaHalfVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rm</span><span class="o">::</span><span class="n">Vector3_</span><span class="o">&lt;</span><span class="n">__half</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// add_inplace kernel</span>
+<span class="c1">// compute &#39;A[i] += B[i]&#39;, massively parallel on the GPU</span>
+<span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">add_inplace_kernel</span><span class="p">(</span>
+<span class="w">    </span><span class="n">MyCudaHalfVector</span><span class="o">*</span><span class="w"> </span><span class="n">vec_a</span><span class="p">,</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">MyCudaHalfVector</span><span class="o">*</span><span class="w"> </span><span class="n">vec_b</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span><span class="w">   </span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">tid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// this invokes a rmagine function using the </span>
+<span class="w">        </span><span class="c1">// using fp16 precision</span>
+<span class="w">        </span><span class="n">vec_a</span><span class="p">[</span><span class="n">tid</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vec_b</span><span class="p">[</span><span class="n">tid</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// buffer of CUDA-half vectors located in RAM</span>
+<span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Memory</span><span class="o">&lt;</span><span class="n">MyCudaHalfVector</span><span class="p">,</span><span class="w"> </span><span class="n">rm</span><span class="o">::</span><span class="n">RAM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer_cpu</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// TODO fill buffer</span>
+
+<span class="w">    </span><span class="c1">// upload all CUDA-half vectors from RAM to VRAM_CUDA, twice</span>
+<span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Memory</span><span class="o">&lt;</span><span class="n">MyCudaHalfVector</span><span class="p">,</span><span class="w"> </span><span class="n">rm</span><span class="o">::</span><span class="n">VRAM_CUDA</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer_a_gpu</span><span class="w"> </span>
+<span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">buffer_cpu</span><span class="p">;</span>
+<span class="w">    </span><span class="n">rm</span><span class="o">::</span><span class="n">Memory</span><span class="o">&lt;</span><span class="n">MyCudaHalfVector</span><span class="p">,</span><span class="w"> </span><span class="n">rm</span><span class="o">::</span><span class="n">VRAM_CUDA</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer_b_gpu</span><span class="w"> </span>
+<span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">buffer_cpu</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// call CUDA kernel &#39;add_inplace_kernel&#39;</span>
+<span class="w">    </span><span class="n">add_inplace_kernel</span><span class="o">&lt;&lt;&lt;</span><span class="n">buffer_gpu</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span><span class="w"> </span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="n">buffer_a_gpu</span><span class="p">.</span><span class="n">raw</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">buffer_b_gpu</span><span class="p">.</span><span class="n">raw</span><span class="p">(),</span>
+<span class="w">        </span><span class="n">buffer_a_gpu</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="c1">// A[i]+=B[i] done.</span>
+<span class="w">    </span><span class="c1">// buffer_a_gpu contains changed elements now   </span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>

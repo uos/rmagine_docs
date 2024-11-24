@@ -941,7 +941,7 @@
 <h1 id="problem-modelling">Problem Modelling</h1>
 <p>The general computing flow is as follows. </p>
 <p><img alt="rmagine_example" src="../../resources/img/rmagine.drawio.png" /></p>
-<p>Tsb is the transform from sensor to base frame. Or spoken: The sensor pose relative to the robot base. The map can be either a pointer to an <code>EmbreeMap</code> or <code>OptixMap</code>. The Prefix of the <code>Simulator</code> is either <code>Embree</code> for CPU computation or <code>Optix</code> for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:</p>
+<p>Tsb is the transform from sensor to base frame. Or in other words: The sensor pose relative to the robot base. The map can be either a pointer to an <code>EmbreeMap</code> or <code>OptixMap</code>. The Prefix of the <code>Simulator</code> is either <code>Embree</code> for CPU computation or <code>Optix</code> for GPU computation. The suffix of the Simulator is dependent on which sensor model you want to simulate. A few examples:</p>
 <ul>
 <li><code>SphereSimulatorEmbree</code> - Simulate a velodyne on CPU</li>
 <li><code>PinholeSimulatorOptix</code>- Simulate a depth camera on GPU</li>
