@@ -6,7 +6,7 @@ These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.git
 
 ```
 sudo apt install python3-pip
-pip3 install mkdocs mkdocs-material
+pip3 install "mkdocs>=1.6" mkdocs-material
 ```
 
 *Note: you may need to adapt your path `export PATH=$PATH:/home/<USER>/.local/bin` to access mkdocs binary*
