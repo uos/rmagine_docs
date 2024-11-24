@@ -35,4 +35,4 @@ int main(int argc, char** argv)
 ## Properties
 
 After loading, the map consists of a complete scene graph. It then usually passed to a simulator (see next "Getting Started"-sections).
-The advanced [Map](library/map)-section describes how to modify or create the internal maps from scratch.
+The advanced [Map](/library/maps.md)-section describes how to modify or create the internal maps from scratch.
