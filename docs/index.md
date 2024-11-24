@@ -43,9 +43,10 @@ When using the Rmagine library or any related ideas in your scientific work, ple
 
 - [Tools](extra/tools)
 - [Data](extra/data)
-- [News](extra/news)
 - [Embree 3](extra/embree3)
+- [CMake - Advanced](extra/cmake_advanced)
 - [Contributions](extra/contributions)
+- [News](extra/news)
 
 ## Contributions
 

@@ -48,6 +48,7 @@ nav:
   - Extra:
     - Tools: extra/tools.md
     - Data: extra/data.md
-    - News: extra/news.md
     - Embree 3: extra/embree3.md
+    - CMake - Advanced: extra/cmake_advanced.md
     - Contributions: extra/contributions.md
+    - News: extra/news.md

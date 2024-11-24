@@ -98,3 +98,5 @@ std::cout << "printing the first ray's range of the fifth scan: " << ranges5[0] 
 
 // slicing and other useful operations will be described at another Wiki page.
 ```
+
+## TODO: Explain TF a bit

@@ -106,3 +106,6 @@ target_link_libraries(my_rmagine_app
     rmagine::optix
 )
 ```
+
+
+For more details and alternate ways of integrating Rmagine into your CMake project we refer to: [CMake - Advanced](/extra/cmake_advanced.md).
