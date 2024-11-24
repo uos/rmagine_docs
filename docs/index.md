@@ -45,11 +45,14 @@ When using the Rmagine library or any related ideas in your scientific work, ple
 This documentation cosists of several examples, guides and conceptual explanations to give users a more thourough understanding about Rmagine.
 As the name tells, new users should make themselfs familar with **Getting Started** first, before continuing to the more advanced examples.
 
-**Getting Started**
+**Rmagine**
 
 - [Overview](/index.md)
-- [Installation](/getting_started/installation.md)
-- [Integration](/getting_started/integration.md)
+- [Installation](/installation.md)
+- [Integration](/integration.md)
+
+**Getting Started**
+
 - [Maps](/getting_started/maps.md)
 - [Sensors](/getting_started/sensors.md)
 - [Simulation](/getting_started/simulation.md)
