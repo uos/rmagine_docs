@@ -20,7 +20,7 @@ Rmagine provides an interface to integrate ray tracing libraries, we call backbo
 
 ### Embree Backbone (optional)
 
-We support Embree in its latest version (test v4.0.1, v4.2.0):
+We support Embree in its latest version (tested: v4.0.1, v4.2.0):
 
 ```bash
 user@pc:~$ git clone https://github.com/embree/embree.git
@@ -34,7 +34,7 @@ For older Embree versions we refer to [this](/extra/embree3.md).
 
 ### OptiX Backbone (optional)
 
-Rmagine supports NVIDIA OptiX versions of 7.2 or newer.
+Rmagine supports NVIDIA OptiX versions of 7.2 or newer (experimental support for OptiX 8).
 The OptiX-Library is installed via the GPU driver.
 The OptiX-Headers can be downloaded [here](https://developer.nvidia.com/designworks/optix/download).
 The Headers require a specific GPU driver and CUDA version to be installed on your system:
@@ -47,7 +47,6 @@ The Headers require a specific GPU driver and CUDA version to be installed on yo
 |     7.5       |  495.89 (untested)     |
 |     7.6       |  520.00 (untested)     |
 |     7.7       |  530.41                |
-
 
 ## Compilation
 
