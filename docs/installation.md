@@ -34,9 +34,9 @@ For older Embree versions we refer to [this](/extra/embree3.md).
 
 ### OptiX Backbone (optional)
 
-Rmagine supports NVIDIA OptiX versions of 7.2 or newer (experimental support for OptiX 8).
+Rmagine supports NVIDIA OptiX versions of 7.2 or newer (experimental support for OptiX 8+).
 The OptiX-Library is installed via the GPU driver.
-The OptiX-Headers can be downloaded [here](https://developer.nvidia.com/designworks/optix/download).
+The OptiX-Headers can be downloaded from [GitHub](https://github.com/NVIDIA/optix-dev).
 The Headers require a specific GPU driver and CUDA version to be installed on your system:
 
 | OptiX Version | Minimum Driver Version |
@@ -47,6 +47,10 @@ The Headers require a specific GPU driver and CUDA version to be installed on yo
 |     7.5       |  495.89 (untested)     |
 |     7.6       |  520.00 (untested)     |
 |     7.7       |  530.41                |
+
+!!! note 
+
+    Check NVIDIA docs for newer versions.
 
 ## Compilation
 
@@ -59,7 +63,7 @@ user@pc:~/rmagine/build$ cmake ..
 user@pc:~/rmagine/build$ make
 ```
 
-The path to OptiX-Headers should be specified with the CMake-Variable `OptiX_INCLUDE_DIR`. This can be done using ccmake, for example.
+The path to OptiX-Headers should be specified with the CMake-Variable `OptiX_INCLUDE_DIR`. This can be done using `ccmake`, for example.
 
 ### Bash Variable (Alternative)
 
@@ -132,14 +136,14 @@ We are working on creating debian packages for easier installations.
 ## Dependencies
 
 ```console
-$ sudo apt install libassimp-dev libeigen3-dev
+sudo apt install libassimp-dev libeigen3-dev
 ```
 
 ## Install
-Download latest Rmagine debian packages from Github releases page (v2.2.2). Install the core by calling
+Download latest Rmagine debian packages from Github releases page (v2.3.0). Install the core by calling
 
 ```console
-sudo apt install ./rmagine-core_2.2.2_amd64.deb
+sudo apt install ./rmagine-core_2.3.0_amd64.deb
 ```
 
 ### Embree Backbone  
@@ -147,7 +151,7 @@ sudo apt install ./rmagine-core_2.2.2_amd64.deb
 We support Embree in its latest version (tested: v4.0.1 - v4.3.0). Make sure you have Embree installed on your system.
 
 ```console
-sudo apt install ./rmagine-embree_2.2.2_amd64.deb
+sudo apt install ./rmagine-embree_2.3.0_amd64.deb
 ```
 
 ### OptiX Backbone
@@ -155,8 +159,8 @@ sudo apt install ./rmagine-embree_2.2.2_amd64.deb
 Make sure you have a current NVIDIA driver installed, then install rmagine-cuda and rmagine-optix by:
 
 ```console
-sudo apt install ./rmagine-cuda_2.2.2_amd64.deb
-sudo apt install ./rmagine-optix_2.2.2_amd64.deb
+sudo apt install ./rmagine-cuda_2.3.0_amd64.deb
+sudo apt install ./rmagine-optix_2.3.0_amd64.deb
 ```
 
 ## Uninstall
