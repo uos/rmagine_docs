@@ -4,7 +4,7 @@ These docs are built with [MkDocs](https://mkdocs.org) and published to [uos.git
 
 ## Build locally
 
-```console
+```bash
 sudo apt install python3-pip
 pip3 install "mkdocs>=1.6" mkdocs-material
 ```
@@ -15,17 +15,15 @@ pip3 install "mkdocs>=1.6" mkdocs-material
 
 After downloading go into the folder of this repository.
 
-```console
+```bash
 conda env create -f environment.yml
 ```
 
 Will create an conda environment named "rmagine_docs". Enable it by calling
 
-```console
+```bash
 conda activate rmagine_docs
 ```
-
-
 
 ### Build Static Files
 

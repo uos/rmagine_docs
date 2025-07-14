@@ -6,16 +6,17 @@ repo_url: https://github.com/uos/rmagine
 
 docs_dir: docs
 theme:
-    name: material
-    features:
-      - navigation.instant
-      - navigation.tabs
-      - navigation.sections
-      - navigation.footer
-    logo: resources/img/rmagine_logo.png
-    favicon: resources/img/rmagine_icon.png
-    palette:
-      primary: blue grey
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+  logo: resources/img/rmagine_logo.png
+  favicon: resources/img/rmagine_icon.png
+  palette:
+    primary: blue grey
 
 markdown_extensions:
   - pymdownx.highlight

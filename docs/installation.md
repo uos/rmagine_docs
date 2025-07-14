@@ -8,8 +8,8 @@ The following instructions are tested on an Ubuntu 20.04 operating system.
 
 For loading commonly used mesh/scene formats.
 
-```bash
-user@pc:~$ sudo apt install libassimp-dev
+```bash title="Terminal"
+sudo apt install libassimp-dev
 ```
 
 ## Backbones
@@ -22,7 +22,7 @@ Rmagine provides an interface to integrate ray tracing libraries, we call backbo
 
 We support Embree in its latest version (tested: v4.0.1, v4.2.0):
 
-```bash
+```bash title="Terminal"
 user@pc:~$ git clone https://github.com/embree/embree.git
 user@pc:~$ mkdir embree/build && cd embree/build
 user@pc:~/embree/build$ cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -56,7 +56,7 @@ The Headers require a specific GPU driver and CUDA version to be installed on yo
 
 Download the Rmagine repository. 
 
-```bash
+```bash title="Terminal"
 user@pc:~/rmagine$ mkdir build
 user@pc:~/rmagine$ cd build
 user@pc:~/rmagine/build$ cmake ..
@@ -69,7 +69,7 @@ The path to OptiX-Headers should be specified with the CMake-Variable `OptiX_INC
 
 Alternatively, cmake checks for the environment variable `OPTIX_INCLUDE_DIR` to exist. After downloading the OptiX-SDK you can add the following command to your `.bashrc`:
 
-```bash
+```bash title="Terminal"
 export OPTIX_INCLUDE_DIR=~/.../NVIDIA-OptiX-SDK-7.4.0-linux64-x86_64/include
 ```
 
@@ -79,7 +79,7 @@ After adding this path, the project should compile without changing the cmake fl
 
 You can check if everything went wrong by running the benchmark that was build besides the library:
 
-```bash
+```bash title="Terminal"
 user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_cpu ../dat/sphere.ply
 ...
 [ 100% - velos/s: 6261.9, mean: 6244.84] 
@@ -88,7 +88,7 @@ Result: 6244.84 velos/s
 
 or if the OptiX support was successfully build:
 
-```bash
+```bash title="Terminal"
 user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_gpu ../dat/sphere.ply
 ...
 [ 100% - velos/s: 383094, mean: 383457, rays/s: 5.52178e+09] 
@@ -99,7 +99,7 @@ Result: 383457 velos/s
 
 After compilation do
 
-```bash
+```bash title="Terminal"
 user@pc:~/rmagine/build$ sudo make install
 ```
 
@@ -107,7 +107,7 @@ user@pc:~/rmagine/build$ sudo make install
 
 You can check if everything went wrong by running the benchmark that was build besides the library:
 
-```bash
+```bash title="Terminal"
 user@pc:~$ rmagine_benchmark_cpu rmagine/dat/sphere.ply
 ...
 [ 100% - velos/s: 6261.9, mean: 6244.84] 
@@ -116,7 +116,7 @@ Result: 6244.84 velos/s
 
 or if the OptiX support was successfully build:
 
-```bash
+```bash title="Terminal"
 user@pc:~$ rmagine_benchmark_gpu rmagine/dat/sphere.ply
 ...
 [ 100% - velos/s: 383094, mean: 383457, rays/s: 5.52178e+09] 
@@ -125,7 +125,7 @@ Result: 383457 velos/s
 
 ## Uninstall Rmagine
 
-```bash
+```bash title="Terminal"
 user@pc:~/rmagine/build$ sudo make uninstall
 ```
 
@@ -135,14 +135,14 @@ We are working on creating debian packages for easier installations.
 
 ## Dependencies
 
-```console
+```bash title="Terminal"
 sudo apt install libassimp-dev libeigen3-dev
 ```
 
 ## Install
 Download latest Rmagine debian packages from Github releases page (v2.3.0). Install the core by calling
 
-```console
+```bash title="Terminal"
 sudo apt install ./rmagine-core_2.3.0_amd64.deb
 ```
 
@@ -150,7 +150,7 @@ sudo apt install ./rmagine-core_2.3.0_amd64.deb
 
 We support Embree in its latest version (tested: v4.0.1 - v4.3.0). Make sure you have Embree installed on your system.
 
-```console
+```bash title="Terminal"
 sudo apt install ./rmagine-embree_2.3.0_amd64.deb
 ```
 
@@ -158,7 +158,7 @@ sudo apt install ./rmagine-embree_2.3.0_amd64.deb
 
 Make sure you have a current NVIDIA driver installed, then install rmagine-cuda and rmagine-optix by:
 
-```console
+```bash title="Terminal"
 sudo apt install ./rmagine-cuda_2.3.0_amd64.deb
 sudo apt install ./rmagine-optix_2.3.0_amd64.deb
 ```
@@ -167,7 +167,7 @@ sudo apt install ./rmagine-optix_2.3.0_amd64.deb
 
 To uninstall everything related to rmagine, call:
 
-```console
+```bash title="Terminal"
 sudo apt-get remove rmagine-core
 ```
 
