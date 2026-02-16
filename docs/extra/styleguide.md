@@ -12,10 +12,6 @@
 - Classes and Structs in camelcase beginning with a capital letter: `Sphere`, `SphereSimulatorEmbree`
 - Class Functions are beginning lowercase and then camelcase: `mult`, `simulateRanges`
 
-TODO: revise files to meet this styleguide
-
-
-
 ## Special Operators for Math Types
 
 - `~`: Invert the element after

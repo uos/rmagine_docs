@@ -1,5 +1,9 @@
 # News
 
+## 17.02.2026
+
+We have integrated the first version of the Vulkan backend into the stable release 2.4.0.
+
 ## 12.09.2024
 
 Alongside the new version 2.2.6 we released a minimal viewer that demonstrates the sensor models of rmagine. Check it out here: https://github.com/amock/rmagine_viewer.

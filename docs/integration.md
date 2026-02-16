@@ -34,9 +34,9 @@ add_compile_options(-std=c++17)
 set(CMAKE_CXX_STANDARD 17)
 
 # find components of a specific rmagine version
-# '2.2.8' will get the newest rmagine which 
-# is greater equal 2.2.8
-find_package(rmagine 2.2.8
+# '2.4.0' will get the newest rmagine which 
+# is greater equal 2.4.0
+find_package(rmagine 2.4.0
   COMPONENTS
     core 
     embree
@@ -85,9 +85,9 @@ add_compile_options(-std=c++17)
 set(CMAKE_CXX_STANDARD 17)
 
 # find components of a specific rmagine version
-# '2.2.8' will get the newest rmagine which 
-# is greater equal 2.2.8
-find_package(rmagine 2.2.8 
+# '2.4.0' will get the newest rmagine which 
+# is greater equal 2.4.0
+find_package(rmagine 2.4.0 
   COMPONENTS
     core 
     cuda

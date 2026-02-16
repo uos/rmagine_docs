@@ -13,12 +13,12 @@ user@pc:~/rmagine/build$ ./bin/rmagine_version
 
 ## rmagine_benchmark
 
-For every implemented computing device we compile a benchmark executable that simulates a Velodyne LiDAR sensor in a given mesh and prints out some useful run time statisitics.
+For every implemented computing device we compile a benchmark executable that simulates a Velodyne LiDAR sensor in a given mesh and prints out some useful run time statistics.
 Thus, we can compare the run times of different implementations on several computers.
 The CPU / Embree version can be tested like this:
 
 ```console
-user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_cpu ../dat/sphere.ply
+user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_embree ../dat/sphere.ply
 Rmagine Benchmark CPU (Embree)
 Inputs: 
 - mesh: ../dat/sphere.ply
@@ -32,7 +32,7 @@ Result: 2387.607002 velos/s
 Analogously, the GPU benchmark can be started as follows:
 
 ```console
-user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_gpu ../dat/sphere.ply
+user@pc:~/rmagine/build$ ./bin/rmagine_benchmark_optix ../dat/sphere.ply
 [RMagine - CudaContext] CUDA Driver Version / Runtime Version: 12.2.0 / 12.2.0
 [RMagine - CudaContext] Construct context on device 0 - NVIDIA GeForce RTX 2060 
 [RMagine - OptixContext] Init Optix (7.3.0). Required GPU driver >= 465.84

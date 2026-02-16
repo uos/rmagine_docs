@@ -1,8 +1,8 @@
 ## Rmagine Scene Graph
 
 Rmagine provides datatypes for scene graphs.
-They are seperated into Embree and OptiX scene graphs to store a Scene Graph either on CPU or on GPU.
-Both of these Scene Graphs have a very similar interface but are slightly different.
+They are seperated into Embree and OptiX (and Vulkan) scene graphs to store a scene graph either on CPU or on GPU.
+Both of these scene graphs have a very similar interface but are slightly different.
 Thus are real shared interface is not implemented yet.
 In Rmagine, a scene graph holds Geometries, Instances and Scenes.
 

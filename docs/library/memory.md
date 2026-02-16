@@ -3,15 +3,16 @@
 Rmagine internally uses so-called Memory objects to manage memory located on different hardware.
 The location where the actual memory should be allocated can be passed as a template argument using one of the following keywords:
 
-- `RAM` (RAM memory)
-- `RAM_CUDA` (pinned CUDA host memory)
-- `VRAM_CUDA` (CUDA device memory)
+* `RAM` (RAM memory)
+* `RAM_CUDA` (pinned CUDA host memory)
+* `VRAM_CUDA` (CUDA device memory)
+* (... and more)
 
 After allocating the memory, accessing elements is similar to using `std::vector`'s:
 
-- access element with `[]`
-- resize the memory with `resize()`
-- access raw data pointer with `raw()` function
+* access element with `[]`
+* resize the memory with `resize()`
+* access raw data pointer with `raw()` function
 
 The following code samples are describing how to work with Memory objects and how to transfer Memory to other hardware.
 
